@@ -8,10 +8,15 @@
     "index.js"
   ],
   "scripts": {
-    "test": "ava"
+    "test": "ava -v"
   },
   "repository": "johnotander/get-readme",
-  "keywords": [],
+  "keywords": [
+    "readme",
+    "get",
+    "retrieve",
+    "file"
+  ],
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {

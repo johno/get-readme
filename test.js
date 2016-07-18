@@ -1,8 +1,13 @@
 import test from 'ava'
 import getReadme from './'
 
-test('get-readme does something awesome', t => {
-  t.plan(1)
+test('gets a readme', t => {
+  t.plan(2)
 
-  t.true(getReadme())
+  t.is(getReadme('fixtures'), 'Readme contents!\n')
+  t.is(getReadme('fixtures/foo'), 'Foo readme contents!\n')
+})
+
+test('gets a readme from a relative dir', t => {
+  t.is(getReadme('../get-readme/fixtures/foo'), 'Foo readme contents!\n')
 })
