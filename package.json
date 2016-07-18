@@ -1,0 +1,20 @@
+{
+  "name": "get-readme",
+  "description": "Retrieve the readme contents from a directory",
+  "author": "John Otander",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": "johnotander/get-readme",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "*"
+  }
+}
