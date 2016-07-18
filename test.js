@@ -11,3 +11,7 @@ test('gets a readme', t => {
 test('gets a readme from a relative dir', t => {
   t.is(getReadme('../get-readme/fixtures/foo'), 'Foo readme contents!\n')
 })
+
+test('returns null when no readme exists', t => {
+  t.falsy(getReadme('fixtures/no-readme'))
+})
