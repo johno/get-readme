@@ -2,23 +2,21 @@
 
 var fs = require('fs')
 var path = require('path')
+var getFilename = require('readme-filename')
 
 module.exports = function getReadme (dir) {
   if (typeof dir !== 'string') {
     throw new TypeError('get-readme expected a string')
   }
 
-  var readme = null
+  return getFilename(dir).then(function (filename) {
+    if (!filename) return null
 
-  fs.readdirSync(dir).forEach(function (file) {
-    if (fs.statSync(path.join(dir, file)).isDirectory()) return
-
-    if (/^readme/i.test(file)) {
-      readme = file
-    }
+    return new Promise(function (resolve, reject) {
+      fs.readFile(path.join(dir, filename), 'utf8', function (err, content) {
+        if (err) return resolve(null)
+        resolve(content)
+      })
+    })
   })
-
-  if (!readme) return
-
-  return fs.readFileSync(path.join(dir, readme), 'utf8')
 }
