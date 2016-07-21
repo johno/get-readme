@@ -14,8 +14,8 @@ npm install --save get-readme
 ```javascript
 var getReadme = require('get-readme')
 
-getReadme('.')
-getReadme('some/other/path')
+getReadme('.').then(console.log)
+getReadme('some/other/path').then(console.log)
 ```
 
 ## License
