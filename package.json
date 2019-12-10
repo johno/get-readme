@@ -2,7 +2,7 @@
   "name": "get-readme",
   "description": "Retrieve the readme contents from a directory",
   "author": "John Otander",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "index.js",
   "files": [
     "index.js"
